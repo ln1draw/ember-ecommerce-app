@@ -1,3 +1,1 @@
-App.CartController = Ember.ObjectController.extend({
-  cartId: null
-})
+App.CartController = Ember.ObjectController.extend({})

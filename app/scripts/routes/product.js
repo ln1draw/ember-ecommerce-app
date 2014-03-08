@@ -1,8 +1,11 @@
 App.ProductRoute = Ember.Route.extend({
+  needs: ["application"],
   actions: {
     addToCart: function (product) {
+      debugger;
       cart = this.controllerFor("cart").get("model")
-      cart.get("items").pushObject(product)
+      item = this.store.createRecord("item", {cart: cart, product: product})
+      cart.get("items").pushObject(item)
       this.transitionTo("cart")
     }
   },

@@ -1,12 +1,8 @@
 var App = Ember.Application.create({});
 
 App.Store = DS.Store.extend({
-  adapter: DS.FixtureAdapter
+  adapter: DS.RESTAdapter.extend({
+    host: "http://localhost:3000",
+    headers: {format: "json"}
+  })
 });
-
-App.ProductsRoute = Ember.Route.extend({
-  model: function () {
-    return this.store.find("product");
-  }
-})
-
