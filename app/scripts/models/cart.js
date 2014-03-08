@@ -1,5 +1,5 @@
 App.Cart = DS.Model.extend({
-  items: DS.hasMany("product", {async: true})
+  items: DS.hasMany("item", {async: true})
 })
 // var CartAdapter = DS.LSAdapter.extend({});
 
