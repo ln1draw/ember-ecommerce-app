@@ -16,8 +16,8 @@
         <td width='50px'><img {{ bind-attr src=product.avatar }} /></td>
         <td>{{ product.name }}</td>
         <td>{{ cents }}</td>
-        <td>x 1</td>
-        <td>{{ cents }}</td>
+        <td width="100px">{{input type=number value=quantity class='col-xs-2 input input-sm form-control' }}</td>
+        <td width="100px">{{ total }}</td>
         <td class='text-center' width="100px">
           <button {{action removeFromCart}} class='btn btn-sm btn-danger'>
             Remove
@@ -29,7 +29,8 @@
   <tr>
     <td colspan=3></td>
     <td class='text-right'>Total:</td>
-    <td colspan=2>{{ cents }}</td>
+    <td>{{ cents }}</td>
+    <td><button {{ action checkout }} class='btn btn-success'>Checkout</button></td>
   </tr>
 </table>
     
