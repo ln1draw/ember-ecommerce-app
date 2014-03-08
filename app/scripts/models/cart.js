@@ -3,4 +3,4 @@ App.Cart = DS.Model.extend({
 })
 // var CartAdapter = DS.LSAdapter.extend({});
 
-App.Cart.FIXTURES = [{id: 1, items: [1]}]
+App.Cart.FIXTURES = [{id: 1}]

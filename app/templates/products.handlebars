@@ -1,5 +1,12 @@
-{{#each}}
-  {{#link-to "product" this }}{{ name }}{{/link-to}}
-{{/each}}
-
-{{ outlet }}
+<div class='row'>
+  <div class='col-lg-2'>
+    <ul class='list-unstyled'>
+      {{#each}}
+        <li>{{#link-to "product" this }}{{ name }}{{/link-to}}</li>
+      {{/each}}
+    </ul>
+  </div>
+  <div class='col-lg-10'>
+    {{ outlet }}
+  </div>
+</div>
