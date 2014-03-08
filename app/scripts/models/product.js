@@ -1,6 +1,6 @@
 App.Product = DS.Model.extend({
   name: DS.attr("string")
-})
+});
 
 App.Product.FIXTURES = [
   {

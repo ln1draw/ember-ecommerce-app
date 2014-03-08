@@ -5,7 +5,8 @@
     "bootstrap": "~3.0.3",
     "jquery": "~1.11.0",
     "ember": "~1.4.0",
-    "ember-data": "~0.0.14"
+    "ember-data": "~0.0.14",
+    "ember-localstorage-adapter": "~0.2.0"
   },
   "devDependencies": {}
 }
