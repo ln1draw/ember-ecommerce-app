@@ -1,5 +1,5 @@
-Products
-
 {{#each}}
-  {{ name }}
+  {{#link-to "product" this }}{{ name }}{{/link-to}}
 {{/each}}
+
+{{ outlet }}
