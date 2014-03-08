@@ -1,4 +1,35 @@
 <h2>Cart</h2>
-{{#each items}}
-  {{ product.name }}
-{{/each}}
+<table class='cart table table-striped table-bordered table-condensed'>
+  <thead>
+    <tr>
+      <th width='50px'></th>
+      <th>Name</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Total</th>
+      <th class='text-center' width="100px"></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each items}}
+      <tr>
+        <td width='50px'><img {{ bind-attr src=product.avatar }} /></td>
+        <td>{{ product.name }}</td>
+        <td>{{ cents }}</td>
+        <td>x 1</td>
+        <td>{{ cents }}</td>
+        <td class='text-center' width="100px">
+          <button {{action removeFromCart}} class='btn btn-sm btn-danger'>
+            Remove
+          </button>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+  <tr>
+    <td colspan=3></td>
+    <td class='text-right'>Total:</td>
+    <td colspan=2>{{ cents }}</td>
+  </tr>
+</table>
+    

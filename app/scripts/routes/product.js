@@ -3,7 +3,7 @@ App.ProductRoute = Ember.Route.extend({
     addToCart: function (product) {
       // After setting up the controller model I can do this
       cart = this.controllerFor("cart").get("model")
-      item = this.store.createRecord("item", {cart: cart, product: product});
+      item = this.store.createRecord("item", {cart: cart, product: product, cents: product.get("cents")});
       cart.get("items").then(function (items) {
         items.pushObject(item)
       })

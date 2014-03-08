@@ -42,21 +42,37 @@ function program3(depth0,data) {
 Ember.TEMPLATES["cart"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, self=this;
+  var buffer = '', stack1, escapeExpression=this.escapeExpression, self=this;
 
 function program1(depth0,data) {
   
   var buffer = '', stack1;
-  data.buffer.push("\n  ");
+  data.buffer.push("\n      <tr>\n        <td width='50px'><img ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'src': ("product.avatar")
+  },hashTypes:{'src': "ID"},hashContexts:{'src': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(" /></td>\n        <td>");
   stack1 = helpers._triageMustache.call(depth0, "product.name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
-  data.buffer.push("\n");
+  data.buffer.push("</td>\n        <td>");
+  stack1 = helpers._triageMustache.call(depth0, "cents", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n        <td>x 1</td>\n        <td>");
+  stack1 = helpers._triageMustache.call(depth0, "cents", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n        <td class='text-center' width=\"100px\">\n          <button ");
+  data.buffer.push(escapeExpression(helpers.action.call(depth0, "removeFromCart", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data})));
+  data.buffer.push(" class='btn btn-sm btn-danger'>\n            Remove\n          </button>\n        </td>\n      </tr>\n    ");
   return buffer;
   }
 
-  data.buffer.push("<h2>Cart</h2>\n");
+  data.buffer.push("<h2>Cart</h2>\n<table class='cart table table-striped table-bordered table-condensed'>\n  <thead>\n    <tr>\n      <th width='50px'></th>\n      <th>Name</th>\n      <th>Price</th>\n      <th>Quantity</th>\n      <th>Total</th>\n      <th class='text-center' width=\"100px\"></th>\n    </tr>\n  </thead>\n  <tbody>\n    ");
   stack1 = helpers.each.call(depth0, "items", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  </tbody>\n  <tr>\n    <td colspan=3></td>\n    <td class='text-right'>Total:</td>\n    <td colspan=2>");
+  stack1 = helpers._triageMustache.call(depth0, "cents", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n  </tr>\n</table>\n    ");
   return buffer;
   
 });

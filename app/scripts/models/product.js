@@ -12,7 +12,7 @@ App.Product.FIXTURES = [
     name: "Gum",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     image: "http://placekitten.com/g/800/600",
-    avatar: "http://placekitten.com/g/100/100",
+    avatar: "http://placekitten.com/g/50/50",
     cents: 199
   },
   {
@@ -20,7 +20,7 @@ App.Product.FIXTURES = [
     name: "Shoe",
     description: "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.",
     image: "http://placekitten.com/800/600",
-    avatar: "http://placekitten.com/100/100",
+    avatar: "http://placekitten.com/50/50",
     cents: 7999
   }
 ]
