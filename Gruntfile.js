@@ -52,13 +52,13 @@ module.exports = function (grunt) {
                 files: ['bower.json'],
                 tasks: ['bowerInstall']
             },
-            // js: {
-            //     files: ['<%= config.app %>/scripts/{,*/}*.js'],
-            //     tasks: ['jshint'],
-            //     options: {
-            //         livereload: true
-            //     }
-            // },
+            js: {
+                files: ['<%= config.app %>/scripts/{,*/}*.js'],
+                // tasks: ['jshint'],
+                options: {
+                    livereload: true
+                }
+            },
             jstest: {
                 files: ['test/spec/{,*/}*.js'],
                 tasks: ['test:watch']
@@ -92,7 +92,7 @@ module.exports = function (grunt) {
             },
             livereload: {
                 options: {
-                    open: true,
+                    open: false,
                     base: [
                         '.tmp',
                         '<%= config.app %>'
