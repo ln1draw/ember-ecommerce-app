@@ -1,0 +1,13 @@
+<h1>
+  {{ name }}
+  <small class='muted'>(${{price}})</small>
+</h1>
+
+<div class='row'>
+  <div class='col-lg-8'>
+    <img {{ bind-attr src=image }} class='thumbnail col-lg-12'></img>
+  </div>
+  <div class='col-lg-4'>
+    {{description}}
+  </div>
+</div>
