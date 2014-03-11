@@ -1,11 +1,17 @@
 Ember.TEMPLATES["application"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, helper, options, self=this, helperMissing=helpers.helperMissing;
 
+function program1(depth0,data) {
+  
+  
+  data.buffer.push("Your Cart");
+  }
 
   data.buffer.push("<div class='container'>\n  <div class='page-header'>\n    <h1>Robo-Router</h1>\n  </div>\n  \n  <p class='lead'>Why have friends when you could have robots?</p>\n  <hr>\n  <div class=\"cart\">");
-  data.buffer.push(escapeExpression((helper = helpers.render || (depth0 && depth0.render),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "cart", options) : helperMissing.call(depth0, "render", "cart", options))));
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "cart", options) : helperMissing.call(depth0, "link-to", "cart", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</div>\n  ");
   stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
@@ -29,7 +35,7 @@ function program1(depth0,data) {
   return buffer;
   }
 
-  stack1 = helpers.each.call(depth0, "item", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
+  stack1 = helpers.each.call(depth0, "items", {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n\nLook at this cart, this cart is amazing!");
   return buffer;
@@ -49,15 +55,14 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
 Ember.TEMPLATES["product"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
-  var buffer = '', stack1, escapeExpression=this.escapeExpression;
+  var buffer = '', stack1, helper, options, helperMissing=helpers.helperMissing, escapeExpression=this.escapeExpression;
 
 
   data.buffer.push("<h1>\n  ");
   stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("\n  <small class='muted'>($");
-  stack1 = helpers._triageMustache.call(depth0, "price", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
-  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push(escapeExpression((helper = helpers.to_dollars || (depth0 && depth0.to_dollars),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "price", options) : helperMissing.call(depth0, "to_dollars", "price", options))));
   data.buffer.push(")</small>\n</h1>\n\n<div class='row'>\n  <div class='col-lg-8'>\n    <img ");
   data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
     'src': ("image")
