@@ -1,7 +1,7 @@
 App.Router.map(function(){
-  this.route("items", { path: "/" });
-  this.resource("items", function () {
-    this.resource("item", { path: ":item_id" });
+  this.route("products", { path: "/" });
+  this.resource("products", function () {
+    this.resource("product", { path: ":product_id" });
   });
   this.route('cart');
 });
