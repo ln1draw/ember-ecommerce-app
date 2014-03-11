@@ -3,8 +3,7 @@ App.Item = DS.Model.extend({
   price: DS.attr("integer"),
   image: DS.attr("string"),
   avatar: DS.attr("string"),
-  description: DS.attr("string"),
-  cart: DS.belongsTo('cart')
+  description: DS.attr("string")
 });
 
 App.Item.FIXTURES = [
