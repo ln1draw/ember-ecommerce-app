@@ -8,5 +8,9 @@ App.Item.FIXTURES = [
     id: 1,
     product: 1,
     quantity: 2
+  }, {
+    id: 2,
+    product: 2,
+    quantity: 1
   }
 ]
