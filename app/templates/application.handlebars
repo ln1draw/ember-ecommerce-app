@@ -1,12 +1,16 @@
 <div class='container'>
-  <div class='page-header'>
-    <h1>Robo-Router</h1>
+  {{# link-to 'products'}}
+    <div class='page-header'>
+      <h1>Robo-Router</h1>
+    </div>
+  
+    <p class='lead'>Why have friends when you could have robots?</p>
+  {{/ link-to}}
+  <hr>
+  <p>{{# link-to "cart" }}View Cart{{/ link-to }}</p>
+  <div class="cart">
+    {{render 'cart'}}
   </div>
   
-  <p class='lead'>Why have friends when you could have robots?</p>
-  <hr>
-  <div class="cart">{{# render "cart"}}</div>
   {{outlet}}
-  
-  <div class='text-muted'><small>Foot</small></div>
 </div>
