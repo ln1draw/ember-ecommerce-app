@@ -33,7 +33,10 @@ function program1(depth0,data) {
   if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
   data.buffer.push("</td>\n      <td> $</td><td class='price'>");
   data.buffer.push(escapeExpression((helper = helpers.to_dollars || (depth0 && depth0.to_dollars),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "product.price", options) : helperMissing.call(depth0, "to_dollars", "product.price", options))));
-  data.buffer.push("</td>\n      <td></td>\n    </tr>\n  ");
+  data.buffer.push("</td>\n      <td>quantity: ");
+  stack1 = helpers._triageMustache.call(depth0, "quantity", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("</td>\n    </tr>\n  ");
   return buffer;
   }
 

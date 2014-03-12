@@ -3,7 +3,7 @@
     <tr>
       <td>{{ this.product.name }}</td>
       <td> $</td><td class='price'>{{to_dollars this.product.price}}</td>
-      <td></td>
+      <td>quantity: {{ this.quantity}}</td>
     </tr>
   {{ else }}
     this cart is empty
