@@ -1,30 +1,37 @@
 <table>
   {{# if items }}
     <tr>
+      <td/>
       <td><h2>Product</h2></td>
+      <td><h2>Price</h2></td>
       <td><h2>Quantity</h2></td>
-      <td><h2>Price Per Unit</h2></td>
-      <td><h2>Total Item Price</h2></td>
       <td><h2>Subtotal</h2></td>
+      <td/>
+      <td/>
+      <td/>
     </tr>
   {{/ if}}
   {{# each items }}
     <tr>
+      <td><img {{ bind-attr src=this.product.avatar }} class='thumbnail col-lg-12'></img></td>
       <td>{{ this.product.name }}</td>
-      <td>{{ this.quantity }}</td>
-      <td><button type="button" class="btn btn-default btn-xsm" {{ action "more" this }}>+</span></button></td>
-      <td><button type="button" class="btn btn-default btn-xsm" {{ action "less" this }}>-</span></button></td>
-      <td><button type="button" class="btn btn-default btn-xsm" {{ action "remove" this }}>remove</span></button></td>
       <td>{{ to_dollars this.product.price}}</td>
+      <td>{{ this.quantity }}</td>
       <td>{{ to_dollars this.subtotal }}<td/>
+      <td><button type="button" class="btn btn-default btn-xsm" {{ action "more" this }}>+</button></td>
+      <td><button type="button" class="btn btn-default btn-xsm" {{ action "less" this }}>-</button></td>
+      <td><button type="button" class="btn btn-default btn-xsm" {{ action "remove" this }}>remove</button></td>
     </tr>
   {{ else }}
     this cart is empty
   {{/ each }}
   {{count}}
-  <br>
-</table>
+  </table>
+  <table>
+    <tr>
+      <td><h3 class='total'>Total: ${{ to_dollars total }}</h3></td>
+      <td><a class='checkout' {{ action "more" this  }}><h3>Checkout</h3></a></td>
+    </tr>
+  </table>
 
-<strong>Subtotal:</strong> ${{ to_dollars total }}
 
-Look at this cart, this cart is amazing!

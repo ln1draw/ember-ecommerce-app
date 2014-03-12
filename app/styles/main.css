@@ -1,0 +1,10 @@
+table{
+  width: 80%;
+  margin: auto;
+}
+tr{
+  width: 100%;
+}
+td{
+  text-align: center;
+}
