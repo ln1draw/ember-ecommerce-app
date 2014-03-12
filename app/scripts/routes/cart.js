@@ -1,4 +1,18 @@
 App.CartRoute = Ember.Route.extend({
+  actions: {
+    more: function(item) {
+      item.incrementProperty('quantity')
+    },
+
+    less: function(item) {
+      if (item.get('quantity') > 1){
+        item.decrementProperty('quantity')
+      } else {
+        item.deleteRecord();
+      }
+    }
+  },
+
   model: function(){
     // currently hard-coded in and needs to be fixed
     return this.store.find("cart", 1);

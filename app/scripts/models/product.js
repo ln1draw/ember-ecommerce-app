@@ -22,5 +22,12 @@ App.Product.FIXTURES = [
     avatar: "http://www.placecage.com/50/50",
     description: "A tweet from real live robot Noah!",
     price: 105
+  }, {
+    id: 3,
+    name: "Tweet from Nancy",
+    image: "http://www.placecage.com/600/800",
+    avatar: "http://www.placecage.com/50/50",
+    description: "A tweet from real live robot Nancy!",
+    price: 125
   }
 ]
