@@ -15,6 +15,14 @@ App.CartRoute = Ember.Route.extend({
           item.deleteRecord();
         }
       });
+    },
+
+    remove: function(item) {
+      this.store.find("cart", 1).then(function (cart){
+        cart.get("items").then(function(items){
+          items.removeObject(item);
+        })
+      })
     }
   },
 

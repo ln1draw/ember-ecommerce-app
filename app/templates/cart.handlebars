@@ -8,13 +8,13 @@
       <td><h2>Subtotal</h2></td>
     </tr>
   {{/ if}}
-  {{debugger}}
   {{# each items }}
     <tr>
       <td>{{ this.product.name }}</td>
       <td>{{ this.quantity }}</td>
       <td><button type="button" class="btn btn-default btn-xsm" {{ action "more" this }}>+</span></button></td>
       <td><button type="button" class="btn btn-default btn-xsm" {{ action "less" this }}>-</span></button></td>
+      <td><button type="button" class="btn btn-default btn-xsm" {{ action "remove" this }}>remove</span></button></td>
       <td>{{ to_dollars this.product.price}}</td>
       <td>{{ to_dollars this.subtotal }}<td/>
     </tr>

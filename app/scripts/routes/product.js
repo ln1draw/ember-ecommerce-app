@@ -7,7 +7,7 @@ App.ProductRoute = Ember.Route.extend({
         var item = store.createRecord("item", {
           cart: cart,
           quantity: 1,
-          price: product.get("price"),
+          item_price: product.get("price"),
           product: product
         })
         // this code is broken and I don't get why!
