@@ -1,13 +1,26 @@
 <table>
+  {{# if items }}
+    <tr>
+      <td><h2>Product</h2></td>
+      <td><h2>Quantity</h2></td>
+      <td><h2>Price Per Unit</h2></td>
+      <td><h2>Total Item Price</h2></td>
+      <td><h2>Subtotal</h2></td>
+    </tr>
+  {{/ if}}
   {{# each items }}
     <tr>
       <td>{{ this.product.name }}</td>
-      <td> $</td><td class='price'>{{to_dollars this.product.price}}</td>
-      <td>quantity: {{ this.quantity}}</td>
+      <td>{{ this.quantity }}</td>
+      <td class='price'>{{to_dollars this.product.price}}</td>
+      <td/><td/>
     </tr>
   {{ else }}
     this cart is empty
   {{/ each }}
+  {{count}}
   <br>
 </table>
+
+
 Look at this cart, this cart is amazing!
