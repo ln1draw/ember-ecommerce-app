@@ -4,7 +4,7 @@ App.Product = DS.Model.extend({
   image: DS.attr("string"),
   avatar: DS.attr("string"),
   description: DS.attr("string"),
-  item: DS.belongsTo('item', {async: true})
+  item: DS.hasMany('item', {async: true})
 });
 
 App.Product.FIXTURES = [

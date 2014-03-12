@@ -1,9 +1,15 @@
 <h2>Available Robots</h2>
+<p>{{# link-to "cart" }}View Cart{{/ link-to }}</p>
+  <div class="cart">
+    {{render 'cart'}}
+    <!-- second cart is a variable and should be set in products route -->
+  </div>
+
 <div class='row'>
   <div class='col-lg-2'>
     <h4>All Robots</h4>
     <ul class='list-unstyled'>
-      {{# each}}
+      {{# each }}
         <li>
           {{# link-to "product" this }}
             <img {{ bind-attr src=avatar }} />

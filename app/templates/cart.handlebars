@@ -1,8 +1,13 @@
-{{# each items }}
-  {{ this.product.name }}
-  hey look it's a product
-{{ else }}
-  this array is empty
-{{/ each }}
-
+<table>
+  {{# each items }}
+    <tr>
+      <td>{{ this.product.name }}</td>
+      <td> $</td><td class='price'>{{to_dollars this.product.price}}</td>
+      <td></td>
+    </tr>
+  {{ else }}
+    this cart is empty
+  {{/ each }}
+  <br>
+</table>
 Look at this cart, this cart is amazing!
