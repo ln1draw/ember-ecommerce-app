@@ -30,7 +30,7 @@
   <table>
     <tr>
       <td><h3 class='total'>Total: ${{ to_dollars total }}</h3></td>
-      <td><a class='checkout' {{ action "more" this  }}><h3>Checkout</h3></a></td>
+      <td>{{# link-to 'checkout'}}<h3>Checkout</h3>{{/ link-to}}</td>
     </tr>
   </table>
 

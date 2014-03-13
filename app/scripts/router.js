@@ -5,4 +5,5 @@ App.Router.map(function(){
   });
   this.route('cart');
   this.route('item');
+  this.route('checkout');
 });
