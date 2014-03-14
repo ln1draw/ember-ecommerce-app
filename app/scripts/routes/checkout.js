@@ -1,8 +1,9 @@
 App.CheckoutRoute = Ember.Route.extend({
   actions:{
     purchase: function(purchase) {
-      purchase.save();
-      console.log(this.store.findAll('purchase'));
+      purchase.save().then(function(purchase){
+        console.log(purchase);
+      })
     }
   },
 
