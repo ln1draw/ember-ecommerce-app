@@ -7,7 +7,7 @@ App.CartRoute = Ember.Route.extend({
     less: function(item) {
       this.store.find("cart", 1).then(function (cart){
         if (item.get('quantity') > 1){
-          item.decrementProperty('quantity')
+          item.decrementProperty('quantity');
         } else {
           cart.get("items").then(function(items){
             items.removeObject(item);
@@ -23,7 +23,7 @@ App.CartRoute = Ember.Route.extend({
           items.removeObject(item);
         })
       })
-    }
+    },
   },
 
   model: function(){

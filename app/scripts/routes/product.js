@@ -24,7 +24,7 @@ App.ProductRoute = Ember.Route.extend({
         //   }
         // })
         cart.get("items").then(function(items){
-          item.save;
+          item.save();
           items.pushObject(item)
         })
       });

@@ -12,7 +12,7 @@
         <li>
           {{# link-to "product" this }}
             <img {{ bind-attr src=avatar }} />
-            {{ name }}
+            {{ name }}<small class='muted'> (${{to_dollars price}})</small>
           {{/ link-to }}
         </li>
         <br>

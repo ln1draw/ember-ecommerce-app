@@ -8,10 +8,14 @@
 </div>
 
 <table>
-  <tr><td>Name:</td> <td>{{ input type="text" value=name }}</td>
+  <!-- valueBinding='model.fieldname' -->
+  <tr><td>Name:</td> <td>{{ input type="text" valueBinding='model.name' }}</td>
   <td>Email:</td> <td>{{ input type="text" value=email }}</td></tr><tr/ class='gap'>
   <tr><td>Credit Card Number:</td> <td>{{ input type="text" value=credit-card-number }}</td>
   <td>CVV:</td> <td>{{ input type="number" value=cvv }}</td></tr>
   <tr><td>Expiration Date:</td> <td>{{ input type="date" value=expiration }}</td></tr><tr/ class='gap'>
   <tr><td>Address:</td> <td>{{ input type="text" value=address }}</td>
   <td>Zipcode:</td> <td>{{ input type="text" value=zip }}</td></tr>
+</table>
+
+<button type="button" class="btn btn-default btn-xsm" {{ action "purchase" this }}>Purchase</button>
