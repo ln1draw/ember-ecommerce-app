@@ -19,7 +19,7 @@ App.CheckoutRoute = Ember.Route.extend({
 
       } else {
         // this should pull out the actual error returned from the rails API
-        alert(sendPurchase.responseText);
+        alert('There was an error processing your order.');
       }
     }
 

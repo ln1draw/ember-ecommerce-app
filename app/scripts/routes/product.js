@@ -24,11 +24,12 @@ App.ProductRoute = Ember.Route.extend({
         //   }
         // })
         cart.get("items").then(function(items){
+          alert(items.contains(item));
           item.save();
-          items.pushObject(item)
-        })
+          items.pushObject(item);
+        });
       });
-      this.transitionTo("cart")
+      this.transitionTo("cart");
     }
   },
 
