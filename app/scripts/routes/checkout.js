@@ -11,12 +11,12 @@ App.CheckoutRoute = Ember.Route.extend({
         var self = this;
 
         purchase.save().then(function (purchase) {
-          self.transitionTo("purchase", purchase.get("id"));
+          self.transitionTo('purchase', purchase.get("id"));
         }, function (error) {
           purchase.deleteRecord();
           alert(error.responseText)
         });
-        
+
       } else {
         // this should pull out the actual error returned from the rails API
         alert(sendPurchase.responseText);
