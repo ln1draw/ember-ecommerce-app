@@ -7,4 +7,8 @@ App.Router.map(function(){
   this.route('item');
   this.route('checkout');
   this.resource('purchase', {path: ":purchase_id"});
+  this.resource('admin', function(){
+    this.resource('productNew');
+    this.resource('productEdit', {path: ":product_id"});
+  });
 });

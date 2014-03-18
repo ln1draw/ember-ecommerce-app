@@ -1,3 +1,53 @@
+Ember.TEMPLATES["admin"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  var buffer = '', stack1, helper, options, escapeExpression=this.escapeExpression, helperMissing=helpers.helperMissing, self=this;
+
+function program1(depth0,data) {
+  
+  
+  data.buffer.push(" Create New Product! ");
+  }
+
+function program3(depth0,data) {
+  
+  var buffer = '', stack1, helper, options;
+  data.buffer.push("\n        <li>\n          ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(4, program4, data),contexts:[depth0,depth0],types:["STRING","ID"],data:data},helper ? helper.call(depth0, "productEdit", "", options) : helperMissing.call(depth0, "link-to", "productEdit", "", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n        </li>\n        <br>\n      ");
+  return buffer;
+  }
+function program4(depth0,data) {
+  
+  var buffer = '', stack1, helper, options;
+  data.buffer.push("\n            <img ");
+  data.buffer.push(escapeExpression(helpers['bind-attr'].call(depth0, {hash:{
+    'src': ("avatar")
+  },hashTypes:{'src': "ID"},hashContexts:{'src': depth0},contexts:[],types:[],data:data})));
+  data.buffer.push(" />\n            ");
+  stack1 = helpers._triageMustache.call(depth0, "name", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("<small class='muted'> ($");
+  data.buffer.push(escapeExpression((helper = helpers.to_dollars || (depth0 && depth0.to_dollars),options={hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data},helper ? helper.call(depth0, "price", options) : helperMissing.call(depth0, "to_dollars", "price", options))));
+  data.buffer.push(")</small>\n          ");
+  return buffer;
+  }
+
+  data.buffer.push("<h2>Admin</h2>\n<div class='row'>\n  <div class='col-lg-2'>\n    ");
+  stack1 = (helper = helpers['link-to'] || (depth0 && depth0['link-to']),options={hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(1, program1, data),contexts:[depth0],types:["STRING"],data:data},helper ? helper.call(depth0, "productNew", options) : helperMissing.call(depth0, "link-to", "productNew", options));
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    <h4>All Robots</h4>\n    <ul class='list-unstyled' id='product-list'>\n      ");
+  stack1 = helpers.each.call(depth0, {hash:{},hashTypes:{},hashContexts:{},inverse:self.noop,fn:self.program(3, program3, data),contexts:[],types:[],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n    </ul>\n  </div>\n  <div class='col-lg-10'>\n    ");
+  stack1 = helpers._triageMustache.call(depth0, "outlet", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0],types:["ID"],data:data});
+  if(stack1 || stack1 === 0) { data.buffer.push(stack1); }
+  data.buffer.push("\n  </div>\n</div>");
+  return buffer;
+  
+});
+
 Ember.TEMPLATES["application"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
 this.compilerInfo = [4,'>= 1.0.0'];
 helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
@@ -190,6 +240,16 @@ helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
   data.buffer.push(escapeExpression(helpers.action.call(depth0, "addToCart", "", {hash:{},hashTypes:{},hashContexts:{},contexts:[depth0,depth0],types:["STRING","ID"],data:data})));
   data.buffer.push(" class='btn btn-success'>Add to Cart</button>\n</div>");
   return buffer;
+  
+});
+
+Ember.TEMPLATES["productedit"] = Ember.Handlebars.template(function anonymous(Handlebars,depth0,helpers,partials,data) {
+this.compilerInfo = [4,'>= 1.0.0'];
+helpers = this.merge(helpers, Ember.Handlebars.helpers); data = data || {};
+  
+
+
+  data.buffer.push("product edit");
   
 });
 

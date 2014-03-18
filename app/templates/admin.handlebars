@@ -1,0 +1,21 @@
+<h2>Admin</h2>
+<div class='row'>
+  <div class='col-lg-2'>
+    {{# link-to "productNew" }} Create New Product! {{/ link-to }}
+    <h4>All Robots</h4>
+    <ul class='list-unstyled' id='product-list'>
+      {{# each }}
+        <li>
+          {{# link-to "productEdit" this }}
+            <img {{ bind-attr src=avatar }} />
+            {{ name }}<small class='muted'> (${{to_dollars price}})</small>
+          {{/ link-to }}
+        </li>
+        <br>
+      {{/ each }}
+    </ul>
+  </div>
+  <div class='col-lg-10'>
+    {{outlet}}
+  </div>
+</div>
