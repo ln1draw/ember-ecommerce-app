@@ -6,24 +6,27 @@ App.CartRoute = Ember.Route.extend({
     },
 
     less: function(item) {
-      this.store.find("cart").then(function (cart){
+      this.store.find("cart", localStorage.cartId).then(function (cart){
         if (item.get('quantity') > 1){
-          item.decrementProperty('quantity').then(function (cart){
-            item.save();
-          })
+
+          item.decrementProperty('quantity');
+          item.save();
         } else {
           cart.get("items").then(function(items){
             items.removeObject(item);
+            item.deleteRecord();
+            item.save();
           });
-          item.deleteRecord();
         }
       });
     },
 
     remove: function(item) {
-      this.store.find("cart").then(function (cart){
+      this.store.find("cart", localStorage.cartId).then(function (cart){
         cart.get("items").then(function(items){
           items.removeObject(item);
+          item.deleteRecord();
+          item.save();
         })
       })
     },
