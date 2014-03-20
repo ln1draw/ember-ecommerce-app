@@ -1,22 +1,23 @@
 App.ProductNewRoute = Ember.Route.extend({
   model: function () {
-    return proxy = Ember.ObjectProxy.create({
-      name: 'In Progress',
-      description: null,
-      price: null,
-      avatar: null,
-      image: null
-    });
-    // return this.store.createRecord("product")
+    return {};
   },
+  
   actions: {
-    createProduct: function (proxy) {
-      newProduct = proxy.set('content', {
-        name: proxy.name,
-        description: proxy.description,
-        price: proxy.price
-      });
-      newProduct.save;
+    createProduct: function (proxy){
+      var product = this.store.createRecord("product", proxy);
+      var self = this;
+
+      product.save().then(
+        function(){
+          alert("Product successfully created.");
+          self.transitionTo("admin");
+        },
+        function (error) {
+          alert(error.responseText);
+          product.deleteRecord();
+        }
+      );
     }
   }
-})
+});

@@ -1,4 +1,4 @@
-<h3>Edit "{{ name }}"</h3>
+<h3>Create "{{ name }}"</h3>
 
 <p>Name:<br> {{ input value=name }}</p>
 
@@ -10,5 +10,4 @@
 
 <p>Avatar URL:<br> {{ textarea value=avatar rows=1 cols=50 }}</p>
 
-<button class="btn btn-info btn-sm" {{action "saveProduct" this}}>Save</button>
-<button class="btn btn-danger btn-sm" {{ action "deleteProduct" this }}>Delete</button>
+<button class="btn btn-info btn-sm" {{action "createProduct" this}}>Save</button>
